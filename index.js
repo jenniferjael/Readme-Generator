@@ -42,10 +42,14 @@ inquirer
       message: "What is the usage?",
       name: "usage",
     },
+
+  
     {
-      type: "input",
+      type: "list",
       message: "What license is being used?",
       name: "license",
+      choices:
+      ['MIT', 'APACHE 2.0', 'BSD 3', 'GPL 3.0', 'None']
     },
     {
       type: "input",
@@ -61,9 +65,29 @@ inquirer
   //fs.writeFile(file, data[, options], callback)
   // TODO: Create a function to write README file
   .then((responses) => {
-   const{titleName,githubUsername,email,contact,description,installation,usage,license,guidelines,test} = responses;
-   console.log(responses);
-   let profileName = `"${titleName}", "${githubUsername}, "${email}"`;
+   let profileName = `# ${responses.titleName} 
+   ## Description
+   ${responses.description}
+
+   ## Table of Contents
+   * [Installation](#installation)
+   * [Usage](#usage)
+   * [License](#license)
+   * [Contributing](#contributing)
+   * [Tests](#tests)
+   * [Questions](#questions)
+   
+   ## Installation
+   ${responses.installation}
+
+   ## Usage
+   ${responses.usage}
+
+   ## License
+   ${responses.license}
+  
+
+   ${githubUsername} ${email}`;
    console.log(profileName);
    fs.writeFile("README.md",profileName,err=>{
      if(err) console.error(err);
