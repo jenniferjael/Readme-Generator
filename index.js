@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const markdown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
 const questions = [];
@@ -68,6 +69,7 @@ function projectQuestions() {
     //fs.writeFile(file, data[, options], callback)
     // TODO: Create a function to write README file
     .then((responses) => {
+      let badge = markdown.renderLicenseSection(responses.license);
       let profileName = `# ${responses.titleName} 
    ## Description
    ${responses.description}
@@ -88,6 +90,7 @@ function projectQuestions() {
 
    ## License
    ${responses.license}
+   ${badge}
 
    ## Contributing Guidelines
    ${responses.guidelines}

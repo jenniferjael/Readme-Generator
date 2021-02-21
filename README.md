@@ -1,4 +1,4 @@
-# WEATHER APPLICATION 
+# WEATHER APP 
    ## Description
    Weather-Forecast is a simple and easy to use applicaton to check the daily weather by city name. The features include the actual date,city name, temperature, humidity, wind speed, and a 5 days forecast. This weather app supports global locations and definitely keeps the user updated with useful information about his/her daily weather conditions.
 
@@ -18,15 +18,16 @@
 
    ## License
    MIT
+   ![license](https://img.shields.io/badge/license-MIT-green)
 
    ## Contributing Guidelines
-   open source project
+   open source contribution
   
    ## Tests
-   node index
+   node.js
 
    ## Questions
    jenniferjael
    jjael8919@gmail.com
    https://jenniferjael.github.io/Portfolio/
-   by email
+   email
