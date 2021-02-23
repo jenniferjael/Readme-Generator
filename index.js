@@ -65,6 +65,15 @@ function projectQuestions() {
         message: "What command should be used to run a test?",
         name: "test",
       },
+
+      {
+        type: "input",
+        message: "What is your youtube link?",
+        name: "youtube",
+      },
+
+
+
     ])
     //fs.writeFile(file, data[, options], callback)
     // TODO: Create a function to write README file
@@ -99,10 +108,11 @@ function projectQuestions() {
    ${responses.test}
 
    ## Questions
-   ${responses.githubName}
-   ${responses.email}
-   ${responses.githubProfile}
-   ${responses.contact}`;
+   ${responses.githubName}\n
+   ${responses.email}\n
+   ${responses.githubProfile}\n
+   ${responses.contact}\n
+   ${responses.youtube}`;
       console.log(profileName);
       fs.writeFile("README.md", profileName, (err) => {
         if (err) console.error(err);
